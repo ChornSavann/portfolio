@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Khmer:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -47,14 +47,51 @@
     </svg>
 
     <div class="prog" id="prog"></div>
+    <div id="intro" aria-hidden="true">
+      <div class="ib">
+        <b>SC</b><span class="bar"><i></i></span>
+      </div>
+    </div>
+
     <header>
       <div class="wrap">
         <a class="brand" href="#top-of-page"><b>SC</b>Savann Chorn</a>
         <nav>
-          <a href="#about">About</a><a href="#skills">Skills</a
-          ><a href="#projects">Projects</a><a href="#contact">Contact</a>
+          <a href="#about">About</a><a href="#journey">Journey</a
+          ><a href="#skills">Skills</a><a href="#projects">Projects</a
+          ><a href="#contact">Contact</a>
         </nav>
         <div class="tools">
+          <button
+            class="btn"
+            id="lang"
+            aria-label="Switch language to Khmer"
+            title="Switch language"
+          >
+            <span id="flag"
+              ><svg class="flg" viewBox="0 0 24 24" aria-hidden="true">
+                <rect width="24" height="24" fill="#012169" />
+                <path
+                  d="M0 0L24 24M24 0L0 24"
+                  stroke="#fff"
+                  stroke-width="4.5"
+                />
+                <path
+                  d="M0 0L24 24M24 0L0 24"
+                  stroke="#C8102E"
+                  stroke-width="1.6"
+                />
+                <path d="M12 0V24M0 12H24" stroke="#fff" stroke-width="7" />
+                <path
+                  d="M12 0V24M0 12H24"
+                  stroke="#C8102E"
+                  stroke-width="4"
+                /></svg></span
+            ><span id="lcode">EN</span
+            ><svg class="i sw" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7" />
+            </svg>
+          </button>
           <button
             class="btn sq"
             id="theme"
@@ -111,7 +148,7 @@
             <div class="ring"></div>
             <div class="frame">
               <img
-                src="/images/savann.jpg"
+                src="images/savann.jpg"
                 alt="Portrait of Savann Chorn"
                 width="640"
                 height="822"
@@ -251,6 +288,62 @@
         </div>
       </section>
 
+      <section id="journey">
+        <div class="wrap">
+          <div class="sh rv">
+            <h2>My journey</h2>
+            <p>
+              Study, internship and projects that shaped how I build software
+              and networks.
+            </p>
+          </div>
+          <div class="tl" id="tl">
+            <i class="fill" id="tlf"></i>
+            <div class="ti rv">
+              <div class="card">
+                <span class="tag">Now</span>
+                <h3>B.Sc. in Information Technology</h3>
+                <b class="org">Build Bright University</b>
+                <p>
+                  Studying software design, databases and computer networking
+                  while building real projects on the side.
+                </p>
+              </div>
+            </div>
+            <div class="ti rv">
+              <div class="card">
+                <span class="tag">Internship</span>
+                <h3>Network project at Hotel Cambodiana</h3>
+                <p>
+                  Designed a multi-VLAN campus network with a MikroTik hotspot
+                  guest portal, load balancing and secure core routing.
+                </p>
+              </div>
+            </div>
+            <div class="ti rv">
+              <div class="card">
+                <span class="tag">Networking</span>
+                <h3>CCNA routing and switching</h3>
+                <p>
+                  Practised VLANs, OSPF, ACLs and port security, and worked with
+                  MikroTik, Cisco and FortiGate devices.
+                </p>
+              </div>
+            </div>
+            <div class="ti rv">
+              <div class="card">
+                <span class="tag">Software</span>
+                <h3>Full-stack and mobile projects</h3>
+                <p>
+                  Built a Laravel POS system, a C# restaurant app, a Flutter UI
+                  and a REST API, all on GitHub.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="skills">
         <div class="wrap">
           <div class="sh rv">
@@ -281,8 +374,7 @@
           <div class="sh rv">
             <h2>Projects</h2>
             <p>
-              Applications, APIs and a network deployment. Every repository is
-              on my GitHub.
+              Applications, APIs and a network deployment. Code is on my GitHub.
             </p>
           </div>
           <label class="search"
@@ -403,6 +495,7 @@
           <div>
             <h4>Explore</h4>
             <a class="l" href="#about">About</a
+            ><a class="l" href="#journey">Journey</a
             ><a class="l" href="#skills">Skills</a
             ><a class="l" href="#projects">Projects</a
             ><a class="l" href="#contact">Contact</a>
@@ -439,6 +532,13 @@
       <svg class="i"><use href="#up" /></svg>
     </button>
 
+    <div id="modal" class="modal" hidden>
+      <div class="mbg" data-close></div>
+      <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mt">
+        <button class="btn sq mx" data-close aria-label="Close">&times;</button>
+        <div id="mc"></div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
